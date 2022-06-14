@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         TelaPrincipal iniciar = new TelaPrincipal();
         iniciar.setVisible(true);
+        System.out.println("teste");
     }
         // TODO code application logic here
     }
