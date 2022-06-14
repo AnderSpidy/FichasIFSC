@@ -18,8 +18,12 @@ public class Main {
         
     ArrayList<Jogador> jogadores = new ArrayList<Jogador>(); 
     Jogador jogador1 = new Jogador("Luan", 20, "Rua Almdeda", "999");
-    TelaAdicionarFichas tela = new TelaAdicionarFichas(jogadores);
-    jogadores.add(jogador1);
+    Jogador jogador2 = new Jogador("Jose", 22, "Rua Dadas", "231");
+    //jogadores.add(jogador1);
+    //jogadores.add(jogador2);
+    //TelaAdicionarFichas tela = new TelaAdicionarFichas(jogadores);   
+    //tela.setVisible(true);
+    TelaPrincipal tela = new TelaPrincipal(jogadores);
     tela.setVisible(true);
 
     }
