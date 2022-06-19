@@ -4,7 +4,10 @@
  */
 package com.mycompany.projetocassino;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -12,12 +15,15 @@ import java.util.ArrayList;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaPrincipal
-     */
-    public TelaPrincipal(ArrayList<Jogador> jogadores) {
+    private ControleJogador controleJogadores = new ControleJogador();
+    private TelaCadastroJogador cadastroJogador;
+    private TelaAdicionarFichas adicionarfichas;
+    private TelaVisualizarJogadores visualizarJogadores;
+    
+    public TelaPrincipal(ControleJogador controleJogador) {
         initComponents();
-        if(jogadores.isEmpty()){
+        this.controleJogadores = controleJogador;
+        if(controleJogadores.getJogadoresCadastrados().isEmpty()){
             btnAdicionarFichas.setEnabled(false);
             btnVisualizarJogadores.setEnabled(false);
         }
@@ -51,10 +57,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAdicionarFichas.setText("Adicionar Fichas");
+        btnAdicionarFichas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdicionarFichasMouseClicked(evt);
+            }
+        });
 
         labelTextoApresentacao.setText("Adicione o jogador ou adicione fichas a um jogador existente. ");
 
         btnVisualizarJogadores.setText("Visualizar Jogadores");
+        btnVisualizarJogadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVisualizarJogadoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,9 +115,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarJogadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarJogadorMouseClicked
-        TelaCadastroJogador telaJogador = new TelaCadastroJogador();
-        telaJogador.setVisible(true);
+       cadastroJogador = new TelaCadastroJogador(this.controleJogadores);
+       cadastroJogador.setLocationRelativeTo(null);
+       cadastroJogador.setVisible(true);
+       dispose();
+       
     }//GEN-LAST:event_btnAdicionarJogadorMouseClicked
+
+    private void btnVisualizarJogadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarJogadoresMouseClicked
+       visualizarJogadores = new TelaVisualizarJogadores(this.controleJogadores);
+       visualizarJogadores.setLocationRelativeTo(null);
+       visualizarJogadores.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnVisualizarJogadoresMouseClicked
+
+    private void btnAdicionarFichasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarFichasMouseClicked
+       adicionarfichas = new TelaAdicionarFichas(this.controleJogadores);
+       adicionarfichas.setLocationRelativeTo(null);
+       adicionarfichas.setVisible(true);
+       dispose();    }//GEN-LAST:event_btnAdicionarFichasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
