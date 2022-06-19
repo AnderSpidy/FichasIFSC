@@ -156,11 +156,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Adicionar Fichas"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAdicionarFichasMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelarFichas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCancelarFichasMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
