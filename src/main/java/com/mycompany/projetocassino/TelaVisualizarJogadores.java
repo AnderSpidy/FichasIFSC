@@ -5,6 +5,7 @@
 package com.mycompany.projetocassino;
 
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
@@ -16,7 +17,10 @@ public class TelaVisualizarJogadores extends javax.swing.JFrame {
 
     private ControleJogador jogadores;
     private TelaPrincipal telaPrincipal;
-    public TelaVisualizarJogadores(ControleJogador jogadoresCadastrados) {
+    ResourceBundle traducoes;
+    
+    public TelaVisualizarJogadores(ControleJogador jogadoresCadastrados,ResourceBundle traducoes) {
+        this.traducoes = traducoes;
         initComponents();
 
         this.jogadores = jogadoresCadastrados;
@@ -93,7 +97,7 @@ public class TelaVisualizarJogadores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairJogadorCadastradosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairJogadorCadastradosMouseClicked
-            telaPrincipal= new TelaPrincipal(jogadores);
+            telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
             telaPrincipal.setVisible(true);
             dispose();

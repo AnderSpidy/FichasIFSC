@@ -4,6 +4,7 @@
  */
 package com.mycompany.projetocassino;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -14,7 +15,10 @@ public class TelaAdicionarFichas extends javax.swing.JFrame {
     private JogadorComboboxModel jogadorComboboxModel;
     private ControleJogador jogadores;
     private TelaPrincipal telaPrincipal;
-    public TelaAdicionarFichas(ControleJogador jogadores) {
+    ResourceBundle traducoes;
+    
+    public TelaAdicionarFichas(ControleJogador jogadores,ResourceBundle traducoes) {
+        this.traducoes = traducoes;
         this.jogadores = jogadores;
         initComponents();
         this.jogadorComboboxModel = new JogadorComboboxModel();
@@ -22,6 +26,8 @@ public class TelaAdicionarFichas extends javax.swing.JFrame {
             this.jogadorComboboxModel.addJogador(j);
         }
         cmbbxJogador.setModel(jogadorComboboxModel);
+        
+        this.tradTela();
     }
 
     
@@ -158,14 +164,14 @@ public class TelaAdicionarFichas extends javax.swing.JFrame {
             jogadores.adicionarFichas(jogadorSelecionado, 500);
         }
             //voltar para a tela principal
-            telaPrincipal= new TelaPrincipal(jogadores);
+            telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
             telaPrincipal.setVisible(true);
             dispose();
     }//GEN-LAST:event_btnAdicionarFichasMouseClicked
 
     private void btnCancelarFichasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarFichasMouseClicked
-        telaPrincipal= new TelaPrincipal(jogadores);
+        telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
             telaPrincipal.setVisible(true);
             dispose();
@@ -184,4 +190,9 @@ public class TelaAdicionarFichas extends javax.swing.JFrame {
     private javax.swing.JLabel labelSelecionarJogadorFichas;
     private javax.swing.JLabel labelTituloAdicionarFichas;
     // End of variables declaration//GEN-END:variables
+
+    private void tradTela() {
+        this.labelTituloAdicionarFichas.setText(this.traducoes.getString("labelTituloAdicionarFichas"));
+
+    }
 }

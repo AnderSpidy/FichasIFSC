@@ -6,6 +6,7 @@ package com.mycompany.projetocassino;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,8 +17,11 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
 
     private ControleJogador jogadores;
     private TelaPrincipal telaPrincipal;
-    public TelaCadastroJogador(ControleJogador jogadoresCadastrados) {
+    ResourceBundle traducoes;
+    
+    public TelaCadastroJogador(ControleJogador jogadoresCadastrados,ResourceBundle traducoes) {
         initComponents();
+        this.traducoes = traducoes;
         this.jogadores = jogadoresCadastrados;
     }
     @SuppressWarnings("unchecked")
@@ -168,7 +172,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
             jogadores.RegistrarJogador(jogador);
             JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso ","Informação",JOptionPane.INFORMATION_MESSAGE);
             
-            telaPrincipal= new TelaPrincipal(jogadores);
+            telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
             telaPrincipal.setVisible(true);
             dispose();
@@ -176,7 +180,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarJogadorMouseClicked
 
     private void btnCancelarJogadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarJogadorMouseClicked
-            telaPrincipal= new TelaPrincipal(jogadores);
+            telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
             telaPrincipal.setVisible(true);
             dispose();
