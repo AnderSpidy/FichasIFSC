@@ -31,6 +31,8 @@ public class TelaVisualizarJogadores extends javax.swing.JFrame {
             model.addElement(j.toString() + ", " + j.getQuantidadeFichas() + " ficha(s)"); 
         }
          listboxJogadoresCadastrados.setModel(model);
+         
+         this.tradTela();
 
     }
 
@@ -110,4 +112,10 @@ public class TelaVisualizarJogadores extends javax.swing.JFrame {
     private javax.swing.JLabel labelTituloJogadoresCadastrados;
     private javax.swing.JList<String> listboxJogadoresCadastrados;
     // End of variables declaration//GEN-END:variables
+
+    private void tradTela() {
+        this.labelTituloJogadoresCadastrados.setText(this.traducoes.getString("labelTituloJogadoresCadastrados"));
+        this.btnSairJogadorCadastrados.setText(this.traducoes.getString("btnSairJogadorCadastrados"));
+
+    }
 }

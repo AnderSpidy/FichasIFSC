@@ -23,6 +23,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
         initComponents();
         this.traducoes = traducoes;
         this.jogadores = jogadoresCadastrados;
+        this.tradTela();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -30,7 +31,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
 
         labelTituloCadastroJogador = new javax.swing.JLabel();
         labelNomeJogador = new javax.swing.JLabel();
-        labelNomeJogador1 = new javax.swing.JLabel();
+        labelIdadeJogador = new javax.swing.JLabel();
         labelEnderecoJogador = new javax.swing.JLabel();
         labelTelefoneJogador = new javax.swing.JLabel();
         textIdadeJogador = new javax.swing.JTextField();
@@ -46,7 +47,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
 
         labelNomeJogador.setText("Nome:");
 
-        labelNomeJogador1.setText("Idade:");
+        labelIdadeJogador.setText("Idade:");
 
         labelEnderecoJogador.setText("Endereço:");
 
@@ -97,7 +98,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
                                     .addComponent(labelNomeJogador)
                                     .addComponent(labelTelefoneJogador)
                                     .addComponent(labelEnderecoJogador)
-                                    .addComponent(labelNomeJogador1))
+                                    .addComponent(labelIdadeJogador))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textNomeJogador1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,7 +122,7 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
                     .addComponent(textNomeJogador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNomeJogador1)
+                    .addComponent(labelIdadeJogador)
                     .addComponent(textIdadeJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -211,8 +212,8 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrarJogador;
     private javax.swing.JButton btnCancelarJogador;
     private javax.swing.JLabel labelEnderecoJogador;
+    private javax.swing.JLabel labelIdadeJogador;
     private javax.swing.JLabel labelNomeJogador;
-    private javax.swing.JLabel labelNomeJogador1;
     private javax.swing.JLabel labelTelefoneJogador;
     private javax.swing.JLabel labelTituloCadastroJogador;
     private javax.swing.JTextField textEnderecoJogador;
@@ -220,4 +221,14 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
     private javax.swing.JTextField textNomeJogador1;
     private javax.swing.JTextField textTelefoneJogador;
     // End of variables declaration//GEN-END:variables
+
+    private void tradTela() {
+        this.labelTituloCadastroJogador.setText(this.traducoes.getString("labelTituloCadastroJogador"));
+        this.labelNomeJogador.setText(this.traducoes.getString("labelNomeJogador"));
+        this.labelIdadeJogador.setText(this.traducoes.getString("labelIdadeJogador"));
+        this.labelEnderecoJogador.setText(this.traducoes.getString("labelEnderecoJogador"));
+        this.labelTelefoneJogador.setText(this.traducoes.getString("labelTelefoneJogador"));
+        this.btnCadastrarJogador.setText(this.traducoes.getString("btnCadastrarJogador"));
+        this.btnCancelarJogador.setText(this.traducoes.getString("btnCancelarJogador"));
+    }
 }

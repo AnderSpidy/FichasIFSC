@@ -39,7 +39,7 @@
                                   <Component id="labelNomeJogador" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelTelefoneJogador" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelEnderecoJogador" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelNomeJogador1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelIdadeJogador" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -73,7 +73,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelNomeJogador1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIdadeJogador" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textIdadeJogador" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
         <Property name="text" type="java.lang.String" value="Nome:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelNomeJogador1">
+    <Component class="javax.swing.JLabel" name="labelIdadeJogador">
       <Properties>
         <Property name="text" type="java.lang.String" value="Idade:"/>
       </Properties>

@@ -193,6 +193,16 @@ public class TelaAdicionarFichas extends javax.swing.JFrame {
 
     private void tradTela() {
         this.labelTituloAdicionarFichas.setText(this.traducoes.getString("labelTituloAdicionarFichas"));
+        this.labelSelecionarJogadorFichas.setText(this.traducoes.getString("labelSelecionarJogadorFichas"));
+        this.checkboxUmaFicha.setText(this.traducoes.getString("checkboxUmaFicha"));
+        this.checkboxVinteECincoFichas.setText(this.traducoes.getString("checkboxVinteECincoFichas"));
+        this.checkboxCinquentaFichas.setText(this.traducoes.getString("checkboxCinquentaFichas"));
+        this.checkboxCemFichas.setText(this.traducoes.getString("checkboxCemFichas"));
+        this.checkboxQuinhentasFichas.setText(this.traducoes.getString("checkboxQuinhentasFichas"));
+        this.btnAdicionarFichas.setText(this.traducoes.getString("btnAdicionarFichas"));
+        this.btnCancelarFichas.setText(this.traducoes.getString("btnCancelarFichas"));
+        
+        
 
     }
 }
