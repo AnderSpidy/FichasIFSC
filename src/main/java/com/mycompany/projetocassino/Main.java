@@ -22,8 +22,8 @@ public class Main {
    
        
         if (args.length != 2) {
-            idioma = new String("en");
-            pais = new String("US");
+            idioma = new String("es");
+            pais = new String("ES");
         } else {
             idioma = new String(args[0]);
             pais = new String(args[1]);

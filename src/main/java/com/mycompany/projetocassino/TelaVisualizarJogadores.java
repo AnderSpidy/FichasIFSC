@@ -28,7 +28,8 @@ public class TelaVisualizarJogadores extends javax.swing.JFrame {
         DefaultListModel model = new DefaultListModel();
         
         for(Jogador j : jogadores.getJogadoresCadastrados()){
-            model.addElement(j.toString() + ", " + j.getQuantidadeFichas() + " ficha(s)"); 
+            String mensagemVisualizar = traducoes.getString("ficha");
+            model.addElement(j.toString() + ", " + j.getQuantidadeFichas() + " " + mensagemVisualizar); 
         }
          listboxJogadoresCadastrados.setModel(model);
          

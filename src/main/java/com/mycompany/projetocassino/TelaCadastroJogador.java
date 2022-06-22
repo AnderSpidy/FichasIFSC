@@ -143,24 +143,28 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarJogadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarJogadorMouseClicked
-         if (textNomeJogador1.getText()==""){
-            
-            JOptionPane.showMessageDialog(null, "Preencha o campo nome","ERRO",JOptionPane.ERROR_MESSAGE);
-
+         String mensagemDeErro = "";
+         
+        if (textNomeJogador1.getText().equals("")){       
+            mensagemDeErro = traducoes.getString("erro-nome");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
          }
          else if (textIdadeJogador.getText().equals("")) {
             
-            JOptionPane.showMessageDialog(null, "Preencha o campo idade","ERRO",JOptionPane.ERROR_MESSAGE);
+             mensagemDeErro = traducoes.getString("erro-idade");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
            
          }
          else if (textTelefoneJogador.getText().equals("")) {
             
-            JOptionPane.showMessageDialog(null, "Preencha o campo telefone","ERRO",JOptionPane.ERROR_MESSAGE);
+             mensagemDeErro = traducoes.getString("erro-telefone");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
            
          }
          else if (textEnderecoJogador.getText().equals("")) {
             
-            JOptionPane.showMessageDialog(null, "Preencha o campo endereço","ERRO",JOptionPane.ERROR_MESSAGE); 
+             mensagemDeErro = traducoes.getString("erro-endereco");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE); 
         }
         else {
         String nome = textNomeJogador1.getText();
@@ -171,7 +175,8 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
             Jogador jogador = new Jogador(nome,idade,endereco,telefone);
             
             jogadores.RegistrarJogador(jogador);
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso ","Informação",JOptionPane.INFORMATION_MESSAGE);
+            String mensagemRegistro = traducoes.getString("registro-realizado");
+            JOptionPane.showMessageDialog(null, mensagemRegistro,"Informação",JOptionPane.INFORMATION_MESSAGE);
             
             telaPrincipal= new TelaPrincipal(jogadores,traducoes);
             telaPrincipal.setLocationRelativeTo(null);
