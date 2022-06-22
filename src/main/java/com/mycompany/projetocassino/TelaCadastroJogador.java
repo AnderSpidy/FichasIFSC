@@ -145,28 +145,46 @@ public class TelaCadastroJogador extends javax.swing.JFrame {
     private void btnCadastrarJogadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarJogadorMouseClicked
          String mensagemDeErro = "";
          
+         int idadeConvertida = Integer.parseInt(textIdadeJogador.getText());
+         
         if (textNomeJogador1.getText().equals("")){       
             mensagemDeErro = traducoes.getString("erro-nome");
             JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
-         }
-         else if (textIdadeJogador.getText().equals("")) {
+        }
+        else if (textIdadeJogador.getText().equals("")) {
             
              mensagemDeErro = traducoes.getString("erro-idade");
             JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
            
-         }
-         else if (textTelefoneJogador.getText().equals("")) {
+        }
+        else if (textTelefoneJogador.getText().equals("")) {
             
              mensagemDeErro = traducoes.getString("erro-telefone");
             JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
            
-         }
-         else if (textEnderecoJogador.getText().equals("")) {
+        }
+        else if (textEnderecoJogador.getText().equals("")) {
             
              mensagemDeErro = traducoes.getString("erro-endereco");
             JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE); 
         }
-        else {
+        else if(textNomeJogador1.getText().length() < 3) {
+            mensagemDeErro = traducoes.getString("erro-nome-tamanho");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
+        }    
+        else if(idadeConvertida < 18) {
+            mensagemDeErro = traducoes.getString("erro-idade-menor");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
+        } 
+        else if(textTelefoneJogador.getText().length() < 3) {
+            mensagemDeErro = traducoes.getString("erro-telefone-tamanho");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
+        } 
+        else if(textEnderecoJogador.getText().length() < 3) {
+            mensagemDeErro = traducoes.getString("erro-endereco-tamanho");
+            JOptionPane.showMessageDialog(null, mensagemDeErro,"ERRO",JOptionPane.ERROR_MESSAGE);
+        } 
+        else{
         String nome = textNomeJogador1.getText();
         String endereco = textEnderecoJogador.getText();
         int idade = Integer.parseInt(textIdadeJogador.getText());
